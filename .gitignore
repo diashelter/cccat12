@@ -1,2 +1,5 @@
 ./backend/ride/node_modules
 ./backend/ride/package-lock.json
+node_modules
+coverage
+package-lock.json
