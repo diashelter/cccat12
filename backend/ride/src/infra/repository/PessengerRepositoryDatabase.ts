@@ -1,8 +1,12 @@
 import pgp from "pg-promise";
 import PassengerRepository from "../../application/repository/PassengerRepository";
 import Passenger from "../../domain/Passenger";
+import DatabaseConnection from "../database/DatabaseConnection";
 
 export default class PassengerRepositoryDatabase implements PassengerRepository {
+
+	constructor (readonly connection: DatabaseConnection) {
+	}
 
 	async save (passenger: Passenger) {
 		const connection = pgp()("postgres://postgres:123456@localhost:5432/app");
