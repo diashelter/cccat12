@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  db:
+    platform: linux/x86_64
+    image: postgres:latest
+    container_name: ccca12-postgres
+    restart: always
+    tty: true
+    command: COPY test_dump.sql /docker-entrypoint-initdb.d/
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./docker/simplesestoquedb:/var/lib/mysql
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+    networks:
+      - ccca12-local
+
+networks:
+  ccca12-local:
+    driver: bridge
