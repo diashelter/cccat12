@@ -1,6 +1,6 @@
 import Cpf from "./Cpf";
 import Email from "./Email";
-import UUIDGenerator from "./UUIDGenerator";
+import UUIDGenerator from "./identify/UUIDGenerator";
 import CarPlate from "./CarPlate";
 
 export default class Driver {
